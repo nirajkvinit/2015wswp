@@ -15,7 +15,8 @@ def link_crawler(seed_url, max_depth=2):
     throttle = Throttle(2)
 
     crawl_queue = [seed_url]
-    seen = set(crawl_queue)
+    # seen = set(crawl_queue)
+    seen = {}
     while crawl_queue:
         url = crawl_queue.pop()
         if rp.can_fetch(user_agent, url):
